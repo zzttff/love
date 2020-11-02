@@ -2,17 +2,58 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>love baby</title>
-    <script src="js\jquery-3.4.1\jquery-3.4.1.js"></script>
+    <title>love</title>
+    <script src="js/jquery-3.4.1/jquery-3.4.1.js"></script>
+
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <!--使用Bootstrap的js插件，必须先调入jQuery-->
+
+    <!-- 包括所有bootstrap的js插件或者可以根据需要使用的js插件调用　-->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
     <script>
         function showModel() {
- 	        alert("hello world");
+            alert("hello world");
+            $("#accountModal").modal("show");
         }
+
     </script>
 </head>
 <body onload="showModel()">
-    <video src="video/">
+<div>
+    <video src="video/"></video>
+    <div class="modal fade" id="accountModal" tabindex="-1" role="dialog" aria-labelledby="accountModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!-- 框框右上角的叉叉按钮，关闭的实现是静态方法：data-dismiss="modal" -->
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <!-- 弹出框的标题 -->
+                    <h4 class="modal-title" id="accountModalLabel">账号信息</h4>
+                </div>
 
-    </video>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="col-lg-2"><h3>昵称:</h3></div>
+                            <div class="col-lg-8"><h3 id="nickname"></h3></div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="col-lg-2"><h3>手机号:</h3></div>
+                            <div class="col-lg-8"><h3 id="mobile"></h3></div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="col-lg-2"><h3>姓名:</h3></div>
+                            <div class="col-lg-8"><h3 id="realName"></h3></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" >关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
