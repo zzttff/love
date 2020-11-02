@@ -10,50 +10,76 @@
 
     <!-- 包括所有bootstrap的js插件或者可以根据需要使用的js插件调用　-->
     <script src="bootstrap/js/bootstrap.min.js"></script>
+    <embed src="video/firstLove.m4a"  hidden autostart="true" loop="true">
     <script>
+
+
+       function ss() {
+           setInterval("toggleSound()",100);
+       }
+
+        function toggleSound() {
+            var music = document.getElementById("vd");//获取ID
+
+            if (music.paused) { //判读是否播放
+                music.paused=false;
+                music.play(); //没有就播放
+            }
+        }
+
+
+
         function showModel() {
-            alert("hello world");
+            alert("是李明星吗??");
+            ss();
             $("#accountModal").modal("show");
         }
+
 
     </script>
 </head>
 <body onload="showModel()">
-<div>
-    <video src="video/"></video>
-    <div class="modal fade" id="accountModal" tabindex="-1" role="dialog" aria-labelledby="accountModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <!-- 框框右上角的叉叉按钮，关闭的实现是静态方法：data-dismiss="modal" -->
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                            aria-hidden="true">&times;</span></button>
-                    <!-- 弹出框的标题 -->
-                    <h4 class="modal-title" id="accountModalLabel">账号信息</h4>
-                </div>
+<audio id="vd" autoplay="autoplay" loop="loop" preload="auto"
+       src="video/firstLove.m4a">
+</audio>
+    <div>
+        <div class="modal fade" id="accountModal" tabindex="-1" role="dialog" aria-labelledby="accountModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
 
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="col-lg-2"><h3>昵称:</h3></div>
-                            <div class="col-lg-8"><h3 id="nickname"></h3></div>
-                        </div>
-                        <div class="col-lg-12">
-                            <div class="col-lg-2"><h3>手机号:</h3></div>
-                            <div class="col-lg-8"><h3 id="mobile"></h3></div>
-                        </div>
-                        <div class="col-lg-12">
-                            <div class="col-lg-2"><h3>姓名:</h3></div>
-                            <div class="col-lg-8"><h3 id="realName"></h3></div>
+                        <h4 class="modal-title" id="accountModalLabel">游戏开始</h4>
+
+                        <!-- 框框右上角的叉叉按钮，关闭的实现是静态方法：data-dismiss="modal" -->
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <!-- 弹出框的标题 -->
+
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="col-lg-8"><h3>恭喜您入坑了！！！</h3></div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="col-lg-2"><h3>手机号:</h3></div>
+                                <div class="col-lg-8"><h3 id="mobile"></h3></div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="col-lg-2"><h3>姓名:</h3></div>
+                                <div class="col-lg-8"><h3 id="realName"></h3></div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" >关闭</button>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" >关闭</button>
+                    </div>
                 </div>
             </div>
         </div>
+
     </div>
-</div>
+
 </body>
 </html>
