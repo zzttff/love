@@ -30,7 +30,7 @@
 
 
         function showModel() {
-            alert("是李明星吗??");
+            alert("是李明星吗?");
             ss();
             $("#accountModal").modal("show");
         }
@@ -43,7 +43,7 @@
        src="video/firstLove.m4a">
 </audio>
     <div>
-        <div class="modal fade" id="accountModal" tabindex="-1" role="dialog" aria-labelledby="accountModalLabel">
+        <div class="modal fade" id="accountModal" tabindex="-1"  aria-labelledby="accountModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -51,8 +51,8 @@
                         <h4 class="modal-title" id="accountModalLabel">游戏开始</h4>
 
                         <!-- 框框右上角的叉叉按钮，关闭的实现是静态方法：data-dismiss="modal" -->
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                                aria-hidden="true">&times;</span></button>
+                        <button type="button" class="close"  aria-label="Close" onclick="show1()"><span
+                                aria-hidden="true">关闭</span></button>
                         <!-- 弹出框的标题 -->
 
                     </div>
@@ -71,7 +71,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" >关闭</button>
+                        <button type="button" class="btn btn-primary" >继续</button>
                     </div>
                 </div>
             </div>
@@ -79,5 +79,42 @@
 
     </div>
 
+<div class="modal fade" id="accountModal1" tabindex="-1"  aria-labelledby="accountModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+
+                <h4 class="modal-title" id="accountModalLabel1">无情哈拉少啊</h4>
+
+                <!-- 框框右上角的叉叉按钮，关闭的实现是静态方法：data-dismiss="modal" -->
+                <button type="button" class="close"  aria-label="Close" onclick="show1()"><span
+                        aria-hidden="true">&times;</span></button>
+                <!-- 弹出框的标题 -->
+
+            </div>
+
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="col-lg-8"><h3>这么无情的吗？</h3></div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="col-lg-8"><h3>还是点继续吧</h3></div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" >继续</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 </body>
+<script>
+    function show1() {
+        $("#accountModal").modal("hide");
+        $("#accountModal1").modal("show");
+    }
+</script>
 </html>
